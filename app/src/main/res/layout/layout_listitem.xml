@@ -10,8 +10,8 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="80dp"
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:layout_width="40dp"
         android:layout_height="80dp"
         android:id="@+id/logoImage"
         android:src="@mipmap/ic_launcher"
@@ -23,40 +23,40 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/datumTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/storeNameTextview"
-            android:text="een winkel naam"
-            android:layout_toRightOf="@id/logoImage"
-            android:textColor="#000"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:textSize="17sp"
-            />
+            android:layout_toRightOf="@id/logoImage"
+            android:drawableLeft="@drawable/calender"
+            android:text="18 april 2020"
+            android:textColor="#000"
+            android:textSize="17sp" />
+
         <TextView
+            android:id="@+id/OpeningTodayTextview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/OpeningTodayTextview"
-            android:text="Vandaag 9:30-18:00"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/logoImage"
             android:drawableLeft="@drawable/clock_black"
+            android:text="9:30-18:00"
             android:textColor="#000"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:textSize="17sp"
-            />
+            android:textSize="17sp" />
+
         <TextView
+            android:id="@+id/locationTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/distanceTextview"
-            android:text="1.6 km"
-            android:drawableLeft="@drawable/marker_black"
-            android:layout_toRightOf="@id/logoImage"
-            android:textColor="#000"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:textSize="17sp"
-            />
+            android:layout_toRightOf="@id/logoImage"
+            android:drawableLeft="@drawable/marker_black"
+            android:text="Herentals Vrijheidslaan 33"
+            android:textColor="#000"
+            android:textSize="17sp" />
 
     </LinearLayout>
 </LinearLayout>
