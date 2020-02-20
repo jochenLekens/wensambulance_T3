@@ -20,27 +20,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.fillDummyData();
-        this.initRecyclerView();
-    }
-
-    private void initRecyclerView() {
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(mDates, mTimes, mLocations, this);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
-
-
-    public void fillDummyData(){
-        mDates.add("19 januari 2020");
-        mDates.add("20 januari 2020");
-        mDates.add("21 januari 2020");
-        mTimes.add("08:00 - 19:00");
-        mTimes.add("12:00 - 20:00");
-        mTimes.add("09:00 - 12:00");
-        mLocations.add("Hasselt - Kempische Steenweg 13");
-        mLocations.add("Hasselt - Kerkstraat 3");
-        mLocations.add("Leuven - Vrijheidslaan 15");
     }
 }
