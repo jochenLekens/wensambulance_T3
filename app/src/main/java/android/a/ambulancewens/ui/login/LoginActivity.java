@@ -1,5 +1,8 @@
 package android.a.ambulancewens.ui.login;
 
+import android.a.ambulancewens.FirebaseDBHelper;
+import android.a.ambulancewens.RecyclerView_Config;
+import android.a.ambulancewens.Wens;
 import android.a.ambulancewens.ui.MainActivity;
 import android.app.Activity;
 
@@ -13,6 +16,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -34,10 +38,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.List;
+
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private ProgressBar loadingProgressBar;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
                         passwordEditText.getText().toString());
             }
         });
+
+
     }
 
     private void signInWithEmailPassword(String email, String password){
