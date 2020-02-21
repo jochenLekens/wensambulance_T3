@@ -91,7 +91,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             locations = itemView.findViewById(R.id.locationTextView);
             parentLayout = itemView.findViewById(R.id.parent_layout);
 
-    }
-
+        }
     }
 }

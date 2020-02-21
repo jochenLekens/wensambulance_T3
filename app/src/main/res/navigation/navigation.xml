@@ -6,7 +6,7 @@
     <fragment
         android:id="@+id/wensListFragment"
         android:name="android.a.ambulancewens.fragments.WensListFragment"
-        android:label="WensListFragment" >
+        android:label="Wensen">
         <action
             android:id="@+id/action_wensListFragment_to_testFragment"
             app:destination="@id/testFragment" />
