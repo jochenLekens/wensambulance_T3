@@ -2,10 +2,10 @@ package android.a.ambulancewens.fragments;
 
 
 import android.a.ambulancewens.adapters.RecyclerViewAdapter;
+import android.a.ambulancewens.data.model.Wish;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,7 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.a.ambulancewens.R;
-import android.widget.Button;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -39,28 +41,20 @@ public class WensListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_wens_list, container, false);
         recyclerView = view.findViewById(R.id.recycler_view);
 
-        this.fillDummyData();
         this.initRecyclerView();
-
         return view;
     }
 
     private void initRecyclerView() {
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(mDates, mTimes, mLocations, getContext());
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference();
+        WishRepository repo = new WishRepository(db);
+
+        repo.storeDummyDate();
+
+        ArrayList<Wish> test = repo.retrieve();
+
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), repo.retrieve());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-    }
-
-
-    public void fillDummyData(){
-        mDates.add("19 januari 2020");
-        mDates.add("20 januari 2020");
-        mDates.add("21 januari 2020");
-        mTimes.add("08:00 - 19:00");
-        mTimes.add("12:00 - 20:00");
-        mTimes.add("09:00 - 12:00");
-        mLocations.add("Hasselt - Kempische Steenweg 13");
-        mLocations.add("Hasselt - Kerkstraat 3");
-        mLocations.add("Leuven - Vrijheidslaan 15");
     }
 }

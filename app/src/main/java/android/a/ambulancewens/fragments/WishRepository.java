@@ -1,4 +1,4 @@
-package android.a.ambulancewens.data.repositories;
+package android.a.ambulancewens.fragments;
 
 import android.a.ambulancewens.data.model.Wish;
 
@@ -8,6 +8,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class WishRepository {
     DatabaseReference db;
@@ -67,11 +68,20 @@ public class WishRepository {
 
     private void fetchData(DataSnapshot dataSnapshot)
     {
-        wishes.clear();
         for (DataSnapshot ds : dataSnapshot.getChildren())
         {
             Wish wish = ds.getValue(Wish.class);
             wishes.add(wish);
+        }
+    }
+
+    public void storeDummyDate(){
+        for(int i = 1; i < 10; i++) {
+            Date date = new Date();
+
+            Wish wish = new Wish("Wens: " + i, date, "Hasselt");
+
+            db.child("wensen").setValue(wish);
         }
     }
 }

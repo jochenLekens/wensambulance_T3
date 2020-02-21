@@ -1,73 +1,41 @@
 package android.a.ambulancewens.data.model;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class Wish {
-    private String name;
-    private String description;
-    private Date date;
-    private String address;
-    private ArrayList<Volunteer> volunteers;
+    private String uId;
+    private Date datum;
+    private String locatie;
 
-    public Wish(String name, String description, Date date, String address, ArrayList<Volunteer> volunteers) {
-        this.name = name;
-        this.description = description;
-        this.date = date;
-        this.address = address;
-        this.volunteers = volunteers;
+    public Wish(String uId, Date datum, String locatie) {
+        this.uId = uId;
+        this.datum = datum;
+        this.locatie = locatie;
     }
 
-    public Wish() {
+    public Wish(){}
+
+    public String getuId() {
+        return uId;
     }
 
-    public String getName() {
-        return name;
+    public void setuId(String uId) {
+        this.uId = uId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Date getDatum() {
+        return datum;
     }
 
-    public String getDescription() {
-        return description;
+    public void setDatum(Date datum) {
+        this.datum = datum;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getLocatie() {
+        return locatie;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public ArrayList<Volunteer> getVolunteers() {
-        return volunteers;
-    }
-
-    public void setVolunteers(ArrayList<Volunteer> volunteers) {
-        this.volunteers = volunteers;
-    }
-
-    public void addVolunteer(Volunteer volunteer){
-        this.volunteers.add(volunteer);
-    }
-
-    public void deleteVolunteer(Volunteer volunteer){
-        this.volunteers.remove(volunteer);
+    public void setLocatie(String locatie) {
+        this.locatie = locatie;
     }
 }
