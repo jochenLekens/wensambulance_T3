@@ -29,7 +29,7 @@ public class WensListFragment extends Fragment {
     private RecyclerView recyclerView;
 
     public WensListFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
